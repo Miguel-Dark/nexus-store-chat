@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayesha Service Desk - Nexus Store</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eef2ff', 100: '#e0e7ff', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 900: '#312e81', 950: '#0f0e26',
+                        },
+                        darkbg: { base: '#090d16', surface: '#111827', card: '#1f2937', border: '#374151' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace al CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-full text-slate-100 flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Header -->
+    <header class="w-full bg-darkbg-surface/90 backdrop-blur-md border-b border-darkbg-border/60 sticky top-0 z-30 px-4 py-3 sm:px-6 flex items-center justify-between shadow-lg">
+        <div class="flex items-center space-x-3.5">
+            <div class="relative">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-purple-500 p-0.5 shadow-md shadow-brand-500/20">
+                    <div class="w-full h-full bg-brand-600 rounded-[10px] flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                </div>
+                <span class="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-darkbg-surface"></span>
+                </span>
+            </div>
+            <div>
+                <div class="flex items-center space-x-2">
+                    <h1 class="font-bold text-base sm:text-lg tracking-tight text-white leading-tight">Ayesha Service Desk</h1>
+                    <span class="px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20">Nexus Store</span>
+                </div>
+                <p class="text-xs text-slate-400 flex items-center gap-1.5 mt-0.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Agente de IA Activo • Respuestas instantáneas
+                </p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700/50 text-xs text-slate-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="font-mono">API: Conectada</span>
+            </div>
+            <button id="btnSettings" title="Configurar Endpoint API" class="hidden p-2 text-slate-400 hover:text-white hover:bg-slate-800/80 rounded-lg transition-colors border border-transparent hover:border-slate-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </button>
+            <button id="btnClear" title="Limpiar conversación" class="hidden p-2 text-slate-400 hover:text-rose-400 hover:bg-slate-800/80 rounded-lg transition-colors border border-transparent hover:border-slate-700">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 transition-all">
+        <div class="bg-darkbg-surface border border-slate-700 w-full max-w-md rounded-2xl p-6 shadow-2xl relative">
+            <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">Configuración de la API</h3>
+            <p class="text-xs text-slate-400 mb-4">Asegúrate de que la dirección corresponda al backend de FastAPI en ejecución.</p>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="apiEndpointInput">Endpoint URL (POST)</label>
+            <input id="apiEndpointInput" type="text" value="http://127.0.0.1:8000/chat" class="w-full bg-darkbg-base border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-brand-500 mb-6 font-mono">
+            <div class="flex justify-end gap-3">
+                <button id="btnCancelSettings" class="px-4 py-2 text-xs font-medium text-slate-300 hover:bg-slate-800 rounded-xl transition">Cancelar</button>
+                <button id="btnSaveSettings" class="px-4 py-2 text-xs font-medium bg-brand-600 hover:bg-brand-500 text-white rounded-xl transition">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat History Section -->
+    <main class="flex-1 overflow-y-auto px-4 py-6 sm:px-6 md:px-8 space-y-6 max-w-5xl w-full mx-auto" id="chatContainer">
+        <div id="welcomeCard" class="bg-gradient-to-br from-darkbg-surface via-slate-900 to-darkbg-card border border-slate-800/80 rounded-2xl p-6 shadow-xl text-center my-4 border-t-brand-500/40 border-t-2">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-600 to-violet-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-brand-500/20">
+                <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-2">¡Hola! Soy Ayesha, tu agente de IA</h2>
+            <p class="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">Estoy aquí para resolver tus dudas sobre compras, envíos, métodos de pago y catálogo de <strong>Nexus Store</strong>.</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-2">
+                <button onclick="sendQuickPrompt('¿Cuáles son los métodos de pago aceptados?')" class="bg-slate-800/80 hover:bg-brand-600/20 border border-slate-700/70 text-xs text-slate-300 px-3 py-2 rounded-xl transition">💳 Métodos de pago</button>
+                <button onclick="sendQuickPrompt('¿Cómo puedo hacer seguimiento a mi pedido?')" class="bg-slate-800/80 hover:bg-brand-600/20 border border-slate-700/70 text-xs text-slate-300 px-3 py-2 rounded-xl transition">📦 Rastreo de envío</button>
+                <button onclick="sendQuickPrompt('¿Cuál es la política de devoluciones?')" class="bg-slate-800/80 hover:bg-brand-600/20 border border-slate-700/70 text-xs text-slate-300 px-3 py-2 rounded-xl transition">🔄 Devoluciones</button>
+                <button onclick="sendQuickPrompt('¿Tienen promociones o cupones vigentes?')" class="bg-slate-800/80 hover:bg-brand-600/20 border border-slate-700/70 text-xs text-slate-300 px-3 py-2 rounded-xl transition">🏷️ Ofertas del día</button>
+            </div>
+        </div>
+        <div id="messagesList" class="space-y-4"></div>
+        <div id="typingIndicator" class="hidden flex items-start gap-3 chat-bubble-enter">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-violet-600 flex items-center justify-center shrink-0 shadow-md">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104v1.244m4.5 0V3.104M12 3v1.244M12 12.75a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" /></svg>
+            </div>
+            <div class="bg-darkbg-surface border border-slate-800 text-slate-300 px-4 py-3 rounded-2xl rounded-tl-sm flex items-center space-x-2 shadow-md">
+                <span class="text-xs font-medium text-slate-400 mr-1">Ayesha está escribiendo</span>
+                <div class="flex space-x-1 items-center h-3">
+                    <div class="w-1.5 h-1.5 bg-brand-400 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+                    <div class="w-1.5 h-1.5 bg-brand-400 rounded-full animate-bounce" style="animation-delay: 0.15s;"></div>
+                    <div class="w-1.5 h-1.5 bg-brand-400 rounded-full animate-bounce" style="animation-delay: 0.3s;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Input Container -->
+    <footer class="w-full bg-darkbg-surface/90 backdrop-blur-md border-t border-darkbg-border/60 px-4 py-3 sm:px-6 sticky bottom-0 z-20">
+        <div class="max-w-5xl mx-auto">
+            <form id="chatForm" onsubmit="handleFormSubmit(event)" class="relative flex items-center gap-2">
+                <input type="text" id="userPrompt" placeholder="Escribe tu consulta para Ayesha aquí..." autocomplete="off" class="w-full bg-darkbg-base text-slate-100 placeholder-slate-500 text-sm rounded-xl pl-4 pr-12 py-3.5 border border-slate-800 focus:outline-none focus:border-brand-500 transition-all"/>
+                <button type="submit" id="btnSend" class="absolute right-2 bg-brand-600 hover:bg-brand-500 disabled:bg-slate-800 text-white p-2.5 rounded-lg transition" title="Enviar mensaje">
+                    <svg class="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                </button>
+            </form>
+            <div class="flex items-center justify-between text-[11px] text-slate-500 mt-2 px-1">
+                <span>Atención automatizada 24/7 por Nexus Store</span>
+                <span class="text-slate-400 font-medium">Developed by <strong>Miguel Ángel de la Cruz Lázaro</strong> • ONE AI FOR TECH LATAM - G10</span>
+                <span id="endpointStatus" class="font-mono text-slate-600 hidden">Endpoint: http://127.0.0.1:8000/chat</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enlace al JS externo -->
+    <script src="script.js"></script>
+</body>
+</html>
