@@ -1,4 +1,4 @@
-let currentEndpoint = localStorage.getItem('ayesha_endpoint') || 'http://127.0.0.1:8000/chat';
+let currentEndpoint = localStorage.getItem('ayesha_endpoint') || 'http://127.0.0.1:8080';
 let chatHistory = JSON.parse(sessionStorage.getItem('ayesha_chat_history')) || [];
 
 const chatContainer = document.getElementById('chatContainer');
@@ -98,7 +98,8 @@ async function handleFormSubmit(e) {
     scrollToBottom();
 
     try {
-        const response = await fetch(currentEndpoint, {
+        const endpointFinal = currentEndpoint.endsWith('/chat') ? currentEndpoint : `${currentEndpoint.replace(/\/$/, '')}/chat`;
+        const response = await fetch(endpointFinal, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
