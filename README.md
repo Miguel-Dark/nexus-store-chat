@@ -4,7 +4,7 @@ Interfaz de usuario moderna y responsiva para el **agente de IA de Nexus Store (
 
 ---
 
-## 🚀 Características Principales
+### 🚀 Características Principales
 
 * **Interfaz Fluida y Responsiva:** Diseño adaptado para dispositivos móviles y de escritorio utilizando Tailwind CSS y modo oscuro nativo.
 * **Indicador de Estado de la API:** Monitoreo visual en tiempo real de la conexión con el servidor backend.
@@ -15,7 +15,7 @@ Interfaz de usuario moderna y responsiva para el **agente de IA de Nexus Store (
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+### 🛠️ Tecnologías Utilizadas
 
 * **HTML5 & Vanilla JavaScript (ES6+):** Lógica del cliente, manejo de eventos y comunicación asíncrona (`fetch`).
 * **Tailwind CSS:** Framework de estilos utilitarios aplicado mediante CDN.
@@ -23,7 +23,7 @@ Interfaz de usuario moderna y responsiva para el **agente de IA de Nexus Store (
 
 ---
 
-## ⚙️ Instrucciones de Ejecución Local
+### ⚙️ Instrucciones de Ejecución Local
 
 Para poner en marcha esta interfaz frontend en tu entorno local, sigue estos pasos:
 
@@ -33,13 +33,15 @@ git clone https://github.com/Miguel-Dark/nexus-store-chat.git
 cd nexus-store-chat
 ```
 
-2. Abrir el Proyecto
+### 2. Abrir el Proyecto
 Dado que es una aplicación frontend basada en archivos estáticos (index.html, style.css, script.js), puedes abrirla de dos formas:
 
 - Directamente: Haz doble clic en el archivo index.html para abrirlo en tu navegador web.
 - Con un Servidor Local (Recomendado): Si usas Visual Studio Code, puedes abrir la carpeta y utilizar la extensión Live Server para levantar el entorno.
 
-3. Conectar con el Backend
-Asegúrate de tener corriendo tu servidor FastAPI del agente (por defecto en http://localhost:8000/chat). La interfaz se conectará automáticamente a este endpoint. Si tu backend corre en otra dirección, puedes configurarlo haciendo clic en el ícono de configuración (⚙️) en la parte superior derecha de la interfaz.
+### 3. Conectar con el Backend
+Asegúrate de tener corriendo tu servidor FastAPI del agente (por defecto en http://localhost:8000/chat). 
+La interfaz se conectará automáticamente a este endpoint. 
+Si tu backend corre en otra dirección, puedes configurarlo haciendo clic en el ícono de configuración (⚙️) en la parte superior derecha de la interfaz.
 
-Desarrollado por Miguel Ángel de la Cruz Lázaro
+Desarrollado por **Miguel Ángel de la Cruz Lázaro**
