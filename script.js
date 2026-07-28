@@ -1,4 +1,4 @@
-let currentEndpoint = localStorage.getItem('ayesha_endpoint') || 'http://127.0.0.1:8000/chat';
+let currentEndpoint = localStorage.getItem('ayesha_endpoint') || 'https://ia-agent-e-commerce-production.up.railway.app/chat';
 let chatHistory = JSON.parse(sessionStorage.getItem('ayesha_chat_history')) || [];
 
 const chatContainer = document.getElementById('chatContainer');
