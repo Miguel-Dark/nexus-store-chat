@@ -29,10 +29,10 @@
     <!-- Enlace al CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="h-full text-slate-100 flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+<body class="h-full text-slate-100 flex flex-col antialiased selection:bg-brand-500 selection:text-white overflow-hidden">
 
     <!-- Top Header -->
-    <header class="w-full bg-darkbg-surface/90 backdrop-blur-md border-b border-darkbg-border/60 sticky top-0 z-30 px-4 py-3 sm:px-6 flex items-center justify-between shadow-lg">
+    <header class="w-full bg-darkbg-surface/90 backdrop-blur-md border-b border-darkbg-border/60 px-4 py-3 sm:px-6 flex items-center justify-between shadow-lg shrink-0 z-30">
         <div class="flex items-center space-x-3.5">
             <div class="relative">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-purple-500 p-0.5 shadow-md shadow-brand-500/20">
@@ -117,7 +117,7 @@
     </main>
 
     <!-- Bottom Input Container -->
-    <footer class="w-full bg-darkbg-surface/90 backdrop-blur-md border-t border-darkbg-border/60 px-4 py-3 sm:px-6 sticky bottom-0 z-20">
+    <footer class="w-full bg-darkbg-surface/90 backdrop-blur-md border-t border-darkbg-border/60 px-4 py-3 sm:px-6 shrink-0 z-20">
         <div class="max-w-5xl mx-auto">
             <form id="chatForm" onsubmit="handleFormSubmit(event)" class="relative flex items-center gap-2">
                 <input type="text" id="userPrompt" placeholder="Escribe tu consulta para Ayesha aquí..." autocomplete="off" class="w-full bg-darkbg-base text-slate-100 placeholder-slate-500 text-sm rounded-xl pl-4 pr-12 py-3.5 border border-slate-800 focus:outline-none focus:border-brand-500 transition-all"/>
