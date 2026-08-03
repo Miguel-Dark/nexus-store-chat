@@ -71,6 +71,6 @@ Al tratarse de una aplicación frontend basada en archivos estáticos (index.htm
 ### 3. Conectar con el Servidor Backend
 > **Nota Importante:** Asegúrate de tener en ejecución tu servidor FastAPI del agente en tu entorno local (ejecutándose por defecto en el puerto `8000`), o bien, apunta la interfaz directamente al enlace de producción desplegado en Railway si prefieres no levantar el backend localmente. La interfaz se enlazará de forma automática. Si requieres cambiar la ruta de conexión, haz clic en el ícono de configuración (`⚙️`) ubicado en la esquina superior derecha de la interfaz web.
 
-Developed by **Miguel Ángel de la Cruz Lázaro** como complemento frontend del ecosistema de Inteligencia Artificial para comercio electrónico.
+###Developed by **Miguel Ángel de la Cruz Lázaro** como complemento frontend del ecosistema de Inteligencia Artificial para comercio electrónico.
 
 ---
