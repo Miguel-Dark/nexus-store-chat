@@ -1,4 +1,9 @@
-let currentEndpoint = localStorage.getItem('ayesha_endpoint') || 'https://ia-agent-e-commerce-production.up.railway.app/chat';
+// Detectar automáticamente si estamos en entorno local o en producción
+const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+const defaultProductionEndpoint = 'https://ia-agent-e-commerce-production.up.railway.app/chat';
+const defaultLocalEndpoint = 'http://127.0.0.1:8000/chat';
+
+let currentEndpoint = localStorage.getItem('ayesha_endpoint') || (isLocal ? defaultLocalEndpoint : defaultProductionEndpoint);
 let chatHistory = JSON.parse(sessionStorage.getItem('ayesha_chat_history')) || [];
 
 const chatContainer = document.getElementById('chatContainer');
@@ -31,6 +36,8 @@ window.addEventListener('popstate', (event) => {
 });
 
 endpointStatus.textContent = `Endpoint: ${currentEndpoint}`;
+const backendTextSpan = document.getElementById('backendEndpointText');
+if (backendTextSpan) backendTextSpan.textContent = currentEndpoint;
 apiEndpointInput.value = currentEndpoint;
 
 // Cargar historial previo si existe
@@ -57,6 +64,7 @@ btnSaveSettings.addEventListener('click', () => {
         currentEndpoint = val;
         localStorage.setItem('ayesha_endpoint', val);
         endpointStatus.textContent = `Endpoint: ${val}`;
+        if (backendTextSpan) backendTextSpan.textContent = val;
         settingsModal.classList.add('hidden');
     }
 });
@@ -122,7 +130,7 @@ async function handleFormSubmit(e) {
 
     } catch (error) {
         console.error("Backend Error:", error);
-        renderErrorMessage("No se pudo conectar con el servidor de Ayesha en (" + currentEndpoint + "). Asegúrate de que tu servicio FastAPI esté corriendo.");
+        renderErrorMessage("⚠️ El servidor en la nube (Railway) puede estar despertando de su modo de suspensión por inactividad. Por favor, espera unos segundos y vuelve a intentar la consulta en (" + currentEndpoint + ")");
     } finally {
         setLoadingState(false);
         scrollToBottom();
