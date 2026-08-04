@@ -160,17 +160,9 @@ function renderAyeshaMessage(text, citationCount = 0, finalAction = null, timeSt
     //const timeStr = getFormattedTime();
     const formattedText = formatText(text);
 
-    //let badgesHTML = '';
-    //if (citationCount > 0) {
-    //    badgesHTML += `<span class="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700"> ${citationCount} citas</span>`;
-    //}
-    //if (finalAction) {
-    //    badgesHTML += `<span class="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-brand-900/40 text-brand-300 border border-brand-700/50"> Status: ${escapeHTML(finalAction)}</span>`;
-    //}
-
     const messageHTML = `
         <div class="flex items-start gap-3 chat-bubble-enter">
-            <!-- Avatar profesional de Ayesha estilo corporativo -->
+            <!-- Avatar profesional estilo corporativo -->
             <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center shrink-0 shadow-md shadow-brand-900/30 mt-0.5 border border-brand-500/30">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
